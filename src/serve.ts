@@ -55,6 +55,16 @@ router.get('/', (ctx) => {
   ctx.body = markdownBody(readme_p, back_readme_p);
 });
 
+router.get('/iptv', (ctx) => {
+  const player_p = path.resolve('m3u', 'player.html');
+  if (fs.existsSync(player_p)) {
+    ctx.type = 'html';
+    ctx.body = fs.readFileSync(player_p);
+  } else {
+    ctx.status = 404;
+  }
+});
+
 router.get('/list/:channel', (ctx) => {
   const list = ctx.params.channel;
   const list_readme_p = path.resolve('m3u', 'list', `${list}.md`);

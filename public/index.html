@@ -10,6 +10,38 @@
             padding: 0;
             background-color: #f0f0f0;
         }
+        .player-entry {
+            max-width: 800px;
+            margin: 20px auto 0;
+            padding: 16px 20px;
+            background: linear-gradient(135deg, #1a73e8, #4a9eff);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(26,115,232,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .player-entry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(26,115,232,0.4);
+            text-decoration: none;
+        }
+        .player-entry .entry-text {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .player-entry .entry-desc {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-top: 2px;
+        }
+        .player-entry .entry-arrow {
+            font-size: 24px;
+            opacity: 0.8;
+        }
         #content {
             max-width: 800px;
             margin: 0 auto;
@@ -62,6 +94,13 @@
     </style>
 </head>
 <body>
+    <a class="player-entry" href="/iptv">
+        <div>
+            <div class="entry-text">📺 在线播放 IPTV 直播</div>
+            <div class="entry-desc">浏览器直接观看，支持频道切换、EPG 节目预告、搜索</div>
+        </div>
+        <span class="entry-arrow">→</span>
+    </a>
     <div id="content"></div>
     <script src="/index.js"></script>
 </body>
